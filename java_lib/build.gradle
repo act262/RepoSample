@@ -1,0 +1,45 @@
+apply plugin: 'java'
+apply plugin: 'groovy'
+apply plugin: 'maven'
+
+dependencies {
+    compile gradleApi()
+    compile localGroovy()
+}
+
+repositories {
+    mavenCentral()
+}
+
+group = 'com.github.act262.lib'
+version = '1.0.0'
+
+// 仓库发布地址
+def REPO_ADDRESS = '../local_repo'
+
+// 发布到maven
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: uri(REPO_ADDRESS))
+        }
+    }
+}
+
+// 删除本地仓库
+task cleanRepo(type: Delete) {
+    delete new File(REPO_ADDRESS)
+}
+
+// 发布到maven
+apply from: 'bintray.gradle'
+buildscript {
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        // gradle plugin
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7'
+    }
+}
