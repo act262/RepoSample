@@ -29,3 +29,16 @@ uploadArchives {
 task cleanRepo(type: Delete) {
     delete new File(REPO_ADDRESS)
 }
+
+// 发布到maven
+apply from: 'bintray.gradle'
+buildscript {
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7'
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
+    }
+}
