@@ -20,5 +20,8 @@ public class MyPluginImpl implements Plugin<Project> {
         project.task('testTask1') << {
             println 'test task1'
         }
+        project.task('testTask2') << {
+            println 'test task2'
+        }
     }
 }

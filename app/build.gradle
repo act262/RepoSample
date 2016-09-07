@@ -28,13 +28,24 @@ dependencies {
 // 添加依赖plugin
 buildscript {
     repositories {
+        // 发布之后就可以从这里获取到了
+        jcenter()
+        // maven center
+        mavenCentral()
+
+        // other maven
         maven {
             // 这里指向本地仓库地址
             url uri('../local_repo')
         }
+
+        // local maven
+        maven {
+            url uri('/user/home/.m2/respoitory/')
+        }
     }
     dependencies {
-        classpath 'com.github.act262.plugin:plugin:1.0.0'
+        classpath 'com.github.act262.plugin:plugin:1.0.1'
     }
 }
 

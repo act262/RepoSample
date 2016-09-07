@@ -11,7 +11,7 @@ repositories {
 }
 
 group = 'com.github.act262.plugin'
-version = '1.0.0'
+version = '1.0.1'
 
 // 仓库发布地址
 def REPO_ADDRESS = '../local_repo'
@@ -38,7 +38,7 @@ buildscript {
     }
 
     dependencies {
+        // gradle plugin
         classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7'
-        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
     }
 }
