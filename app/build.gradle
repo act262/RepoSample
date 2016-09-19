@@ -28,11 +28,12 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:24.2.0'
+    compile 'com.android.support:appcompat-v7:24.2.1'
+
     // add java library
-//    compile 'com.github.act262.lib:java_lib:1.0.0'
+    compile 'com.github.act262.java_lib:java_lib:0.0.2'
     // add aar
-//    compile 'com.github.act262.aar_lib:myaar:1.0.2'
+    compile 'com.github.act262.aar_lib:aar_lib:0.0.1'
 }
 
 // 这部分可以放到rootProject下的
