@@ -11,8 +11,8 @@ repositories {
     mavenCentral()
 }
 
-group = 'com.github.act262.lib'
-version = '1.0.0'
+group = 'com.github.act262.java_lib'
+version = '0.0.2'
 
 // 仓库发布地址
 def REPO_ADDRESS = '../local_repo'
@@ -31,7 +31,7 @@ task cleanRepo(type: Delete) {
     delete new File(REPO_ADDRESS)
 }
 
-// 发布到maven
+// 发布到 bintray maven
 apply from: 'bintray.gradle'
 buildscript {
     repositories {
