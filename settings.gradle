@@ -1,1 +1,1 @@
-include ':app', ':plugin', ':java_lib'
+include ':app', ':plugin', ':java_lib', ':aar_lib'

@@ -1,5 +1,11 @@
 apply plugin: 'com.android.application'
 
+repositories {
+    maven {
+        url "https://dl.bintray.com/act262/maven"
+    }
+}
+
 android {
     compileSdkVersion 24
     buildToolsVersion "24.0.2"
@@ -25,8 +31,11 @@ dependencies {
     compile 'com.android.support:appcompat-v7:24.2.0'
     // add java library
 //    compile 'com.github.act262.lib:java_lib:1.0.0'
+    // add aar
+//    compile 'com.github.act262.aar_lib:myaar:1.0.2'
 }
 
+// 这部分可以放到rootProject下的
 // 添加依赖plugin
 buildscript {
     repositories {
