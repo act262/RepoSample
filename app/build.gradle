@@ -1,9 +1,17 @@
 apply plugin: 'com.android.application'
 
+// 这里的仓库针对当前module生效的,主要是依赖library用到的
 repositories {
-    maven {
-        url "https://dl.bintray.com/act262/maven"
-    }
+    // 指定到jcenter的仓库,指向https://jcenter.bintray.com/
+    jcenter()
+    // 指定网络上的maven仓库
+    maven { url "https://dl.bintray.com/act262/maven" }
+    // 指定网络上对的maven仓库，指向 https://repo1.maven.org/maven2/
+    mavenCentral()
+    // 本地的仓库,位置随意
+    maven { url "~/.m2/repository" }
+    // 指定了本地默认的maven仓库,相当于指向~/.m2/repository
+    mavenLocal()
 }
 
 android {
@@ -27,7 +35,6 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:24.2.1'
 
     // add java library
@@ -36,27 +43,28 @@ dependencies {
     compile 'com.github.act262.aar_lib:aar_lib:0.0.1'
 }
 
-// 这部分可以放到rootProject下的
-// 添加依赖plugin
+// 这部分可以放到rootProject下的,主要是针对插件的仓库生效,也会对project生效,这里为了做实例放到这里了
+// 添加 android gradle plugin
 buildscript {
     repositories {
-        // 发布之后就可以从这里获取到了
+        // 发布到jcenter之后就可以从这里获取到了
         jcenter()
+
         // maven center
         mavenCentral()
 
-        // other maven
-        maven {
-            // 这里指向本地仓库地址
-            url uri('../local_repo')
-        }
+        // local maven
+        mavenLocal()
+
+        // 这里指向本地仓库地址
+        maven { url uri('../local_repo') }
 
         // local maven
-        maven {
-            url uri('/user/home/.m2/respoitory/')
-        }
+        maven { url uri('~/.m2/respoitory/') }
     }
+
     dependencies {
+        // 依赖android gradle plugin
         classpath 'com.github.act262.plugin:plugin:1.0.1'
     }
 }
