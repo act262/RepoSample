@@ -15,10 +15,10 @@ def developerId = 'act262'
 def developerName = 'act262'
 def developerEmail = 'act262@gmail.com'
 
-def publishedGroupId = 'com.github.act262.java_lib'
-def artifact = 'java_lib'
+def publishedGroupId = 'com.github.act262.java_library_sample'
+def artifact = 'library'
 def projectName = 'java_libray_sample'
-def publishVersion = '0.0.2'
+def publishVersion = '0.0.3'
 
 install {
     repositories {

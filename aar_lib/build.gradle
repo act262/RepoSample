@@ -27,9 +27,11 @@ buildscript {
 
     dependencies {
         classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7'
+
+        // 构建android archive (aar)发布到maven
         classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
     }
 }
 
-group = 'com.github.act262.aar_lib'
-version = '0.0.1'
+group = 'com.github.act262.aar_sample'
+version = '0.0.6'

@@ -16,10 +16,10 @@ def developerId = 'act262'
 def developerName = 'act262'
 def developerEmail = 'act262@gmail.com'
 
-def publishedGroupId = 'com.github.act262.plugin'
-def artifact = 'gradle'
+def publishedGroupId = 'com.github.act262.plugin_sample'
+def artifact = 'plugin'
 def projectName = 'gradle_plugin_sample'
-def publishVersion = '1.0.1'
+def publishVersion = '1.0.5'
 
 install {
     repositories {

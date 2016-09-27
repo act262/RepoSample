@@ -1,7 +1,7 @@
 apply plugin: 'com.jfrog.bintray'
 apply plugin: 'com.github.dcendents.android-maven'
-//apply plugin: 'maven-publish'
-//apply plugin: 'maven'
+apply plugin: 'maven-publish'
+apply plugin: 'maven'
 
 def mavenDesc = 'android archives library sample.'
 def siteUrl = 'https://github.com/act262/RepoSample'
@@ -17,10 +17,10 @@ def developerId = 'act262'
 def developerName = 'act262'
 def developerEmail = 'act262@gmail.com'
 
-def publishedGroupId = 'com.github.act262.aar_lib'
-def artifact = 'aar_lib'
+def publishedGroupId = 'com.github.act262.aar_sample'
+def artifact = 'library'
 def projectName = 'aar_library_sample'
-def publishVersion = '0.0.1'
+def publishVersion = '0.0.6'
 
 install {
     repositories {

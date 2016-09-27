@@ -3,16 +3,14 @@ apply plugin: 'groovy'
 apply plugin: 'maven'
 
 dependencies {
-    compile gradleApi()
-    compile localGroovy()
 }
 
 repositories {
     mavenCentral()
 }
 
-group = 'com.github.act262.java_lib'
-version = '0.0.2'
+group = 'com.github.act262.java_lib_sample'
+version = '0.0.3'
 
 // 仓库发布地址
 def REPO_ADDRESS = '../local_repo'
